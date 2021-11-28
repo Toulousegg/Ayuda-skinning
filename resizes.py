@@ -10,8 +10,7 @@ original = os.listdir(direccion)
 def original_sizes():
     images = cv2.imread (original)
     tamano = alto, ancho = images.size ()
-    print(tamano)
-
+    
 #quiero que esto use el tamaño original de la imagen y que la divida a la mitad
-#def resize():
-#    o
+def resize():
+    original_sizes.tamano ()
