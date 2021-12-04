@@ -5,10 +5,14 @@ import cv2
 
 direccion = 'D:/proyectos/ayuda skinning/Images'
 images = os.listdir(direccion)
-print(images)
+#print(images)
 
-imagen = Image.open(images)
-ancho, alto = imagen.size
-imagen = imagen.resize((ancho/2, alto/2))
-#GUARDADO
-imagen.save('transformada')
+while '@2x' in images:
+    imagen = Image.open(images)
+    ancho, alto = imagen.size
+    imagen = imagen.resize((ancho/2, alto/2))
+    #GUARDADO
+    imagen.save('transformada')
+
+    if '@2x' not in images:
+        continue
