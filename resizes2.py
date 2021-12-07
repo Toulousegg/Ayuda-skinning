@@ -7,12 +7,12 @@ direccion = 'D:/proyectos/ayuda skinning/Images'
 images = os.listdir(direccion)
 #print(images)
 
-while '@2x' in images:
-    imagen = Image.open(images)
+for imagen_name in images:
+    imagen_to_resize = Image.open(direccion + images)
     ancho, alto = imagen.size
-    imagen = imagen.resize((ancho/2, alto/2))
+    imagen.size = imagen.resize((ancho/2, alto/2))
     #GUARDADO
     imagen.save('transformada')
 
     if '@2x' not in images:
-        continue
+        break
