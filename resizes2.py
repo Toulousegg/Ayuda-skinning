@@ -9,10 +9,10 @@ images = os.listdir(direccion)
 
 for imagen_name in images:
     imagen_to_resize = Image.open(direccion + images)
-    ancho, alto = imagen.size
-    imagen.size = imagen.resize((ancho/2, alto/2))
+    ancho, alto = Image.size
+    Image.size = Image.resize((ancho/2, alto/2))
     #GUARDADO
-    imagen.save('transformada')
+    Image.save('transformada')
 
     if '@2x' not in images:
         break
