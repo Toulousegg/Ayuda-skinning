@@ -15,7 +15,10 @@ for imagen_name in images:
     ancho, alto = Image.size
     Image.size = Image.resize((ancho/2, alto/2))
     #GUARDADO
-    Image.save('transformada')
+    Image.save('Redimensionada')
+
+#Esto es para que cuando quiera redimensionar más de una imagen cambie su nombre
+    #if images
 
     if '@2x' not in images:
         break
