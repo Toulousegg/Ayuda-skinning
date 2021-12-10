@@ -24,6 +24,7 @@ for imagen_name in imagen_name:
     ancho, alto = Image.size
     Image.size = Image.resize((ancho/2, alto/2))
     #GUARDADO
+    #Quiero que se guarde redimensionada(1), redimensionada(2), redimensionada(3)... etc
     Image.save('Redimensionada ' + i)
 
 #Esto es para que cuando quiera redimensionar más de una imagen cambie su nombre
