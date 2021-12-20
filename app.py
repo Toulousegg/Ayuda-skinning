@@ -2,6 +2,7 @@ from PIL import Image
 import os
 import pathlib 
 import cv2
+import pygame
 
 #Esto es una ejemplo de dirección
 direccion = 'D:/proyectos/ayuda skinning/Images'
@@ -20,9 +21,10 @@ for files in files:
     # inteligente, Este método concadena varios componentes de ruta con exactamente un separador de directorio ('\') en Windows ('/') en Unix/Linuxdespués de 
     # cada parte no vacía, excepto el último componente de ruta. Se usa siempre que quieras usar las direcciones de los archivos.
     image = os.path.join(direccion, files)
-    imagen_to_resize = Image.open(files, 'r')
-    ancho, alto = files.size
-    Image.size = files.resize((ancho/2, alto/2))
+    img = pygame.image.load(files)
+    width = img.get_width()
+    height = img.get_height()
+    Image.size = files.resize((width/2, height/2))
     #GUARDADO
     #Quiero que se guarde redimensionada(1), redimensionada(2), redimensionada(3)... etc
     Image.save('Redimensionada' + i+1)
