@@ -6,7 +6,7 @@ import cv2
 #Esto es una ejemplo de dirección
 direccion = 'D:/proyectos/ayuda skinning/Images'
 files = os.listdir(direccion)
-i = 0 
+a = 0 
 
 # Nota de lo que aprendí: los bucles sirven para realizar una tarea una y otra vez hasta que se le diga que pare por una condición (las condiciones
 # pueden ser tanto 'BREAK' como 'CONTINUE', el break termina por completo el bucle, el continue solo ignora tal cosa, puede ser un bucle While o bucle for
@@ -21,11 +21,11 @@ for files in files:
     # cada parte no vacía, excepto el último componente de ruta. Se usa siempre que quieras usar las direcciones de los archivos.
     image = os.path.join(direccion, files)
     imagen_to_resize = Image.open(files, 'r')
-    ancho, alto = files.size
-    Image.size = files.resize((ancho/2, alto/2))
+    tamaño = files.size
+    Image.size = files.resize((tamaño//2))
     #GUARDADO
     #Quiero que se guarde redimensionada(1), redimensionada(2), redimensionada(3)... etc
-    Image.save('Redimensionada' + i+1)
+    Image.save('Redimensionada ' + a+1)
 
 #Esto es para que cuando quiera redimensionar más de una imagen elimine el '@2x'
     #if images
