@@ -4,6 +4,8 @@ import pathlib
 import cv2
 
 #Esto es una ejemplo de dirección
+#Nota: Si el programa no funciona probablemente sea por la dirección, cambiala a la dirección donde tengas guardado el archivo para que funcione porque
+# las direcciones que yo puse son las de mi pc y no necesariamente van a ser las misma en tu pc, antes de que digas que no sirve verifica eso xd
 direccion = 'D:/proyectos/ayuda skinning/Images'
 files = os.listdir(direccion)
 direccion_guardado = 'D:/proyectos/ayuda skinning/Redimensionadas'
