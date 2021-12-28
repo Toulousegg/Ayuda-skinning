@@ -6,6 +6,8 @@ import cv2
 #Esto es una ejemplo de dirección
 direccion = 'D:/proyectos/ayuda skinning/Images'
 files = os.listdir(direccion)
+direccion_guardado = 'D:/proyectos/ayuda skinning/Redimensionadas'
+save_direct = os.listdir(direccion_guardado)
 a = 0 
 
 # Nota de lo que aprendí: los bucles sirven para realizar una tarea una y otra vez hasta que se le diga que pare por una condición (las condiciones
@@ -17,9 +19,8 @@ for files in files:
     # una forma portable de utilizar el sistema operativo, así puedes hacer que tu código corra tanto en MAC, Linux y Windows sin problemas, el módulo 'os.path' 
     # es un submódulo del módulo OS en Python que se utiliza para la manipulación de nombres de rutas comunes, en otras palabras se usa para interactuar con las
     # direcciones de nuestros archivos (o por lo menos eso es lo que entendí), el 'os.path.join' une uno o más componentes de una dirección (supongo) de forma
-    # inteligente, Este método concadena varios componentes de ruta con exactamente un separador de directorio ('\') en Windows ('/') en Unix/Linuxdespués de 
+    # inteligente, Este método concadena varios componentes de ruta con exactamente un separador de directorio ('/') en Windows ('\') en Unix/Linuxdespués de 
     # cada parte no vacía, excepto el último componente de ruta. Se usa siempre que quieras usar las direcciones de los archivos.
-    #image = os.path.join(direccion, files) (esto tal parece que no iba acá, iba dentro de image_to_resize)
     imagen_to_resize = Image.open(os.path.join(direccion, files))
     ancho, alto = imagen_to_resize.size
     imagen_to_resize = imagen_to_resize.resize((alto//2, ancho//2))
