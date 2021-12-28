@@ -19,13 +19,13 @@ for files in files:
     # direcciones de nuestros archivos (o por lo menos eso es lo que entendí), el 'os.path.join' une uno o más componentes de una dirección (supongo) de forma
     # inteligente, Este método concadena varios componentes de ruta con exactamente un separador de directorio ('\') en Windows ('/') en Unix/Linuxdespués de 
     # cada parte no vacía, excepto el último componente de ruta. Se usa siempre que quieras usar las direcciones de los archivos.
-    image = os.path.join(direccion, files)
-    imagen_to_resize = Image.open(files, 'r')
-    tamaño = files.size
-    Image.size = files.resize((tamaño//2))
+    #image = os.path.join(direccion, files) (esto tal parece que no iba acá, iba dentro de image_to_resize)
+    imagen_to_resize = Image.open(os.path.join(direccion, files))
+    ancho, alto = imagen_to_resize.size
+    imagen_to_resize = imagen_to_resize.resize((alto//2, ancho//2))
     #GUARDADO
     #Quiero que se guarde redimensionada(1), redimensionada(2), redimensionada(3)... etc
-    Image.save('Redimensionada ' + a+1)
+    imagen_to_resize.save('Redimensionada ' + a+1)
 
 #Esto es para que cuando quiera redimensionar más de una imagen elimine el '@2x'
     #if images
