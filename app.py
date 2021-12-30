@@ -28,7 +28,8 @@ for files in files:
     imagen_to_resize = imagen_to_resize.resize((alto//2, ancho//2))
     #GUARDADO
     #Quiero que se guarde redimensionada(1), redimensionada(2), redimensionada(3)... etc
-    imagen_to_resize.save('Redimensionada.png')
+    #Quiera que se guarde en la carpeta 'Redimensionadas' o que las imagenes redimensionadas sistituyan a las originales en Images
+    imagen_to_resize.save(os.path.join(save_direct('Redimensionada.png')))
 
 #Esto es para que cuando quiera redimensionar más de una imagen elimine el '@2x'
     #if images
