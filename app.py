@@ -2,6 +2,7 @@ from PIL import Image
 import os
 import pathlib 
 import cv2
+import pygame
 
 #Esto es una ejemplo de dirección
 #Nota: Si el programa no funciona probablemente sea por la dirección, cambiala a la dirección donde tengas guardado el archivo para que funcione porque
@@ -24,8 +25,9 @@ for files in files:
     # inteligente, Este método concadena varios componentes de ruta con exactamente un separador de directorio ('/') en Windows ('\') en Unix/Linuxdespués de 
     # cada parte no vacía, excepto el último componente de ruta. Se usa siempre que quieras usar las direcciones de los archivos.
     imagen_to_resize = Image.open(os.path.join(direccion, files))
-    ancho, alto = imagen_to_resize.size
-    imagen_to_resize = imagen_to_resize.resize((alto//2, ancho//2))
+    width = imagen_to_resize.get_width()
+    height = imagen_to_resize.get_height()
+    imagen_to_resize = imagen_to_resize.resize((width//2, height//2))
     #GUARDADO
     #Quiero que se guarde redimensionada(1), redimensionada(2), redimensionada(3)... etc
     #Quiera que se guarde en la carpeta 'Redimensionadas' o que las imagenes redimensionadas sistituyan a las originales en Images
