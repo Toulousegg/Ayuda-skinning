@@ -7,9 +7,15 @@ from numpy import delete
 #Esto es una ejemplo de dirección
 #Nota: Si el programa no funciona probablemente sea por la dirección, cambiala a la dirección donde tengas guardado el archivo para que funcione porque
 # las direcciones que yo puse son las de mi pc y no necesariamente van a ser las misma en tu pc, antes de que digas que no sirve verifica eso xd
+<<<<<<< HEAD
 direccion = 'C:/Users/EQUIPO/Desktop/Proyectos/Ayuda-skinning/Images'
 files = os.listdir(direccion)
 direccion_guardado = 'C:/Users/EQUIPO/Desktop/Proyectos/Ayuda-skinning/Redimensionadas'
+=======
+direccion = 'D:/proyectos/Python/ayuda skinning/Images'
+files = os.listdir(direccion)
+direccion_guardado = 'D:/proyectos/Python/ayuda skinning/Redimensionadas'
+>>>>>>> 27937354a3bc6385f0af5202384a0baf72bab3d0
 save_direct = os.listdir(direccion_guardado)
 i = 0 
 
@@ -34,6 +40,7 @@ for files in files:
         rename = os.path.join (os.path.abspath (direccion), 'Prueba_' + files) #Renombrar de acuerdo a sus necesidades, puede cambiar 'E_' + img al nombre que desee
         rename_completed = os.rename (name, rename) #Rename, sobrescribe el nombre original
 
+<<<<<<< HEAD
     else:
         continue
 
@@ -49,3 +56,7 @@ for files in files:
         break
 
     imagen_to_resizes.save (f'Redimensionada_{i}.png')
+=======
+    if '@2x' not in files:
+        break
+>>>>>>> 27937354a3bc6385f0af5202384a0baf72bab3d0
