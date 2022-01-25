@@ -32,18 +32,15 @@ for files in files:
     ancho, alto = imagen_to_resize.size
     imagen_to_resizes = imagen_to_resize.resize((ancho//2, alto//2))
 
+    #if '@2x' in name:
+            #del_2x = name
+            #del_2x_name = os.path.abspath (direccion)
+            #del_2x_rename = os.path.join(del_2x_name, del_2x_name - '@2x')#se que esto esta malo pero se entiende lo que quiero hacer
+
     if files.endswith('.png'):
         name = os.path.join (os.path.abspath (direccion), files) #esto obtiene el nombre original de la imagen
         rename = os.path.join (os.path.abspath (direccion), 'Prueba_' + files) #Renombrar de acuerdo a sus necesidades, puede cambiar 'E_' + img al nombre que desee
         rename_completed = os.rename (name, rename) #Rename, sobrescribe el nombre original
-
-    else:
-        continue
-
-    if '@2x' in name:
-            del_2x = name
-            del_2x_name = os.path.abspath (direccion)
-            del_2x_rename = os.path.join(del_2x_name, del_2x_name - '@2x')#se que esto esta malo pero se entiende lo que quiero hacer
 
     imagen_to_resizes.save (f'Redimensionada_{i}.png')
 
