@@ -9,8 +9,11 @@ from numpy import delete
 # las direcciones que yo puse son las de mi pc y no necesariamente van a ser las misma en tu pc, antes de que digas que no sirve verifica eso xd
 direccion = 'C:/Users/EQUIPO/Desktop/Proyectos/Ayuda-skinning/Images'
 files = os.listdir(direccion)
+
 direccion_guardado = 'C:/Users/EQUIPO/Desktop/Proyectos/Ayuda-skinning/Redimensionadas'
 save_direct = os.listdir(direccion_guardado)
+
+images_para_redimensionar = int(input('¿Cuantas imagenes quieres redimensionar?: '))
 i = 0
 
 #Nota de lo que aprendí: los bucles sirven para realizar una tarea una y otra vez hasta que se le diga que pare por una condición (las condiciones
@@ -29,26 +32,26 @@ for files in files:
     ancho, alto = imagen_to_resize.size
     imagen_to_resizes = imagen_to_resize.resize((ancho//2, alto//2))
 
-    if imagen_to_resizes.endswith('.png'):
-        name = os.path.join (os.path.abspath (direccion), files) #esto obtiene el nombre original de la imagen
-        rename = os.path.join (os.path.abspath (direccion), 'Prueba_' + files) #Renombrar de acuerdo a sus necesidades, puede cambiar 'E_' + img al nombre que desee
-        rename_completed = os.rename (name, rename) #Rename, sobrescribe el nombre original
+    #if imagen_to_resizes.endswith('.png'):
+        #name = os.path.join (os.path.abspath (direccion), files) #esto obtiene el nombre original de la imagen
+        #rename = os.path.join (os.path.abspath (direccion), 'Prueba_' + files) #Renombrar de acuerdo a sus necesidades, puede cambiar 'E_' + img al nombre que desee
+        #rename_completed = os.rename (name, rename) #Rename, sobrescribe el nombre original
 
-    else:
-        continue
+    #else:
+        #continue
 
-    if '@2x' in name:
-            del_2x = name
-            del_2x_name = os.path.abspath (direccion)
-            del_2x_rename = os.path.join(del_2x_name, del_2x_name - '@2x')
+    #if '@2x' in name:
+            #del_2x = name
+            #del_2x_name = os.path.abspath (direccion)
+            #del_2x_rename = os.path.join(del_2x_name, del_2x_name - '@2x')#se que esto esta malo pero se entiende lo que quiero hacer
 
     #if i >= 20: #quiero que el programa tenga un limite de 20 archivos máximo para redimensionar
         #break
 
-    if i == 10:
-        break
-
     imagen_to_resizes.save (f'Redimensionada_{i}.png')
+
+    if i == images_para_redimensionar:
+        break
 
     if '@2x' not in files:
         break
