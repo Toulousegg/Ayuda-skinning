@@ -3,6 +3,7 @@ import os
 import pathlib 
 import cv2
 from numpy import delete
+from tqdm.auto import tqdm
 
 #Esto es una ejemplo de dirección
 #Nota: Si el programa no funciona probablemente sea por la dirección, cambiala a la dirección donde tengas guardado el archivo para que funcione porque
@@ -13,6 +14,7 @@ files = os.listdir(direccion)
 direccion_guardado = 'C:/Users/EQUIPO/Desktop/Proyectos/Ayuda-skinning/Redimensionadas'
 save_direct = os.listdir(direccion_guardado)
 
+caracteres = '@2x'
 images_para_redimensionar = int(input('¿Cuantas imagenes quieres redimensionar?: '))
 i = 0
 
@@ -28,24 +30,22 @@ for files in files:
     #direcciones de nuestros archivos (o por lo menos eso es lo que entendí), el 'os.path.join' une uno o más componentes de una dirección (supongo) de forma
     #inteligente, Este método concadena varios componentes de ruta con exactamente un separador de directorio ('/') en Windows ('\') en Unix/Linuxdespués de 
     #cada parte no vacía, excepto el último componente de ruta. Se usa siempre que quieras usar las direcciones de los archivos.
+    
+    #redimensionamiento...
     imagen_to_resize = Image.open(os.path.join(direccion, files))
     ancho, alto = imagen_to_resize.size
     imagen_to_resizes = imagen_to_resize.resize((ancho//2, alto//2))
-
-    #if '@2x' in name:
-            #del_2x = name
-            #del_2x_name = os.path.abspath (direccion)
-            #del_2x_rename = os.path.join(del_2x_name, del_2x_name - '@2x')#se que esto esta malo pero se entiende lo que quiero hacer
-
-    if files.endswith('.png'):
-        name = os.path.join (os.path.abspath (direccion), files) #esto obtiene el nombre original de la imagen
-        rename = os.path.join (os.path.abspath (direccion), 'Prueba_' + files) #Renombrar de acuerdo a sus necesidades, puede cambiar 'E_' + img al nombre que desee
-        rename_completed = os.rename (name, rename) #Rename, sobrescribe el nombre original
-
-    imagen_to_resizes.save (f'Redimensionada_{i}.png')
+    
+    #cambio de nombre...
+    name = str(imagen_to_resizes)
+    rename = name.replace(caracteres, ' ')
+    imagen_to_resizes.save (f'{rename}.png', 'w')
 
     if i == images_para_redimensionar:
         break
 
     if '@2x' not in files:
         break
+
+    #for i in tqdm(range(images_para_redimensionar)): #esto es una barra de carga
+        #print(' ', end='\r')
