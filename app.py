@@ -39,6 +39,8 @@ for files in files:
     #cambio de nombre...
     name = str(imagen_to_resizes)
     rename = name.replace(caracteres, ' ')
+
+    #guardado
     imagen_to_resizes.save (f'{rename}.png', 'w')
 
     if i == images_para_redimensionar:
