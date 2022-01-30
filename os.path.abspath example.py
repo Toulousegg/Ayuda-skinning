@@ -6,6 +6,9 @@ ROOT_DIR = os.path.abspath("../")
 img_path = os.path.join(ROOT_DIR, "Ayuda-skinning/Images")
 imglist = os.listdir(img_path)
 #print(filelist)
+
+#ESTO ME SIRVE PARA EL PROGRAMA PRINCIPAL
+
 i = 0
 for img in imglist:
     i+=1

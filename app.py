@@ -41,7 +41,7 @@ for files in files:
     rename = name.replace(caracteres, ' ')
 
     #guardado
-    imagen_to_resizes.save (f'{rename}.png', 'w')
+    imagen_to_resizes.save (f'{rename}.png')
 
     if i == images_para_redimensionar:
         break
