@@ -49,5 +49,6 @@ for files in files:
     if '@2x' not in files:
         break
 
-    #for i in tqdm(range(images_para_redimensionar)): #esto es una barra de carga
+    #barra de carga
+    #for i in tqdm(range(images_para_redimensionar)):
         #print(' ', end='\r')
