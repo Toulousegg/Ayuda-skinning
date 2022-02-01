@@ -37,11 +37,11 @@ for files in files:
     imagen_to_resizes = imagen_to_resize.resize((ancho//2, alto//2))
     
     #cambio de nombre...
-    name = str(imagen_to_resizes)
-    rename = name.replace(caracteres, ' ')
+    name = imagen_to_resize.filename
+    rename = name.replace(caracteres, '')
 
     #guardado
-    imagen_to_resizes.save (f'{rename}.png')
+    imagen_to_resizes.save (f'{rename}')
 
     if i == images_para_redimensionar:
         break
