@@ -38,10 +38,10 @@ for files in files:
     
     #cambio de nombre...
     name = str(imagen_to_resizes)
-    rename = name.replace(caracteres, ' ')
+    rename = name.replace (caracteres, ' ')
 
     #guardado
-    imagen_to_resizes.save (f'{rename}.png')
+    imagen_to_resizes.save (f'{name, rename}.png', 'W+B')
 
     if i == images_para_redimensionar:
         break
