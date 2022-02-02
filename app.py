@@ -41,6 +41,9 @@ for files in files:
     rename = name.replace (caracteres, '')
     #rename_completed = name, rename
 
+    rename = name.replace(caracteres, '')
+
+
     #guardado
     imagen_to_resizes.save (f'{rename}')
 
