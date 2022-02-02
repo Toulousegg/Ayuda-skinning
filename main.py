@@ -1,4 +1,4 @@
-from tkinter import Tk, label, Button
+from tkinter import Tk, Label, Button
 from tkinter.ttk import Label
 
 class InterfazGrafica:
