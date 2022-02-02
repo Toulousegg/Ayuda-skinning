@@ -1,4 +1,4 @@
-from tkinter import tk, label, Button
+from tkinter import Tk, label, Button
 from tkinter.ttk import Label
 
 class InterfazGrafica:
@@ -17,3 +17,7 @@ class InterfazGrafica:
 
         def button_aceptar(self):
             print('Hey, wasup?')
+
+root = Tk()
+miVentana = InterfazGrafica(root)
+root.mainloop()
