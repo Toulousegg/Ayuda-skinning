@@ -8,14 +8,19 @@ from tqdm.auto import tqdm
 #Esto es una ejemplo de dirección
 #Nota: Si el programa no funciona probablemente sea por la dirección, cambiala a la dirección donde tengas guardado el archivo para que funcione porque
 # las direcciones que yo puse son las de mi pc y no necesariamente van a ser las misma en tu pc, antes de que digas que no sirve verifica eso xd
-direccion = 'C:/Users/EQUIPO/Desktop/Proyectos/Ayuda-skinning/Images'
+direccion = 'C:/Users/Franklin Mogollón/Documents/Proyectos (Programing)/Ayuda-skinning/Images'
 files = os.listdir(direccion)
 
-direccion_guardado = 'C:/Users/EQUIPO/Desktop/Proyectos/Ayuda-skinning/Redimensionadas'
-save_direct = os.listdir(direccion_guardado)
+#direccion_guardado = 'C:/Users/EQUIPO/Desktop/Proyectos/Ayuda-skinning/Redimensionadas'
+#save_direct = os.listdir(direccion_guardado)
 
 caracteres = '@2x'
+print('Escribe 0 para seleccionar todo')
 images_para_redimensionar = int(input('¿Cuantas imagenes quieres redimensionar?: '))
+if images_para_redimensionar == 0:
+    print(f'Seleccionaste todos los elementos, será un total de {files.len()} imagenes para redimensionar')
+    #images_para_redimensionar = files.all
+    
 i = 0
 
 #Nota de lo que aprendí: los bucles sirven para realizar una tarea una y otra vez hasta que se le diga que pare por una condición (las condiciones
