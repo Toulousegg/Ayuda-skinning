@@ -17,10 +17,17 @@ files = os.listdir(direccion)
 caracteres = '@2x'
 print('Escribe 0 para seleccionar todo')
 images_para_redimensionar = int(input('¿Cuantas imagenes quieres redimensionar?: '))
-if images_para_redimensionar == 0:
-    print(f'Seleccionaste todos los elementos, será un total de {files.len()} imagenes para redimensionar')
-    #images_para_redimensionar = files.all
-    
+
+if images_para_redimensionar == 0: #quiero que esto seleecione todos los elementos de una carpeta solo escribiendo 0 o *
+    for seleccion_completa in files:
+        print(f'Seleccionaste todos los elementos, será un total de imagenes para redimensionar')
+        #elementos = (list(map(int, files))) #problema en esta linea, selecciona un elemento pero me dice que es un elemento invalido
+        ints = []
+        for elementos in files: #tengo que encontrar la forma de poner esto en un bucle ya sea for o while que se repita la operacióon y seleccione todos los elementos de la lista 
+            todos_elementos = ints.append[int(elementos)]    
+        #files[elementos][all]
+        print (todos_elementos)
+
 i = 0
 
 #Nota de lo que aprendí: los bucles sirven para realizar una tarea una y otra vez hasta que se le diga que pare por una condición (las condiciones
